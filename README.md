@@ -10,13 +10,18 @@ Modification http://wiki.ros.org/irobot_create_2_1 to ROS indigo
 		$ cd ..
 		$ catkin_make
 
-# Run
-1. Connect the pioneer in USB port
+# Run with Joystick
+1. Connect the Create robot in USB port and joystick
 
-2. Open 3 terminal
+2. Open 4 terminal
 
 		$ sudo chmod 777 /dev/ttyUSB0
+		$ sudo chmod 777 /dev/input/js0		
 		$ roscore
 		$ rosrun irobot_create driver.py
+		$ rosrun joy joy_node
+		$ rosrun irobot_create irobotJoyTeleop.py
+
+If a problem occurs, check the ports
 
 
